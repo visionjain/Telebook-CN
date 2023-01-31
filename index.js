@@ -96,4 +96,35 @@ const deleteContact = () => {
   }
 };
 
+const updateContact = () => {
+  console.log("Do you want to update:\n a. Name\n b. Number\n c. Email");
+  const choice = prompt("Enter your choice: ");
+  switch (choice) {
+    case "a":
+      const currentName = prompt("Enter the current name: ");
+      const nameIndex = telebook.findIndex((element) => element.Name === currentName);
+      const updatedName = prompt("Enter the updated name: ");
+      telebook[nameIndex].Name = updatedName;
+      console.log(telebook);
+      break;
+    case "b":
+      const currentNumberName = prompt("Enter the name for the current number: ");
+      const numberIndex = telebook.findIndex((element) => element.Name === currentNumberName);
+      const updatedNumber = prompt("Enter the updated number: ");
+      telebook[numberIndex].Number = updatedNumber;
+      console.log(telebook);
+      break;
+    case "c":
+      const currentEmailName = prompt("Enter the name for the current email: ");
+      const emailIndex = telebook.findIndex((element) => element.Name === currentEmailName);
+      const updatedEmail = prompt("Enter the updated email: ");
+      telebook[emailIndex].Email = updatedEmail;
+      console.log(telebook);
+      break;
+    default:
+      console.log("Invalid choice, try again.");
+  }
+};
+
+
 main();
